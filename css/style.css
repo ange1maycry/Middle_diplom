@@ -1666,6 +1666,10 @@ input.error {
   cursor: pointer;
 }
 
+.not-active {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;
