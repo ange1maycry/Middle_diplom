@@ -9,11 +9,12 @@ const calc = (price = 100) => {
         const countCalc = () => {
             const calcTypeValue = +calcType.options[calcType.selectedIndex].value
             const calcInputValue = calcInput.value
+            const calcMaterialValue = calcMaterial.value
 
             let totalValue = 0
 
             if (calcType.value && calcInput.value) {
-                totalValue = price * calcTypeValue * calcInputValue
+                totalValue = price * calcTypeValue * calcInputValue * calcMaterialValue
             } else {
                 totalValue = 0
             }

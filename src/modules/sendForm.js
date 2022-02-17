@@ -1,6 +1,8 @@
 const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId)
     const statusBlock = document.createElement('div')
+    const text = document.getElementById('text')
+    const number = document.getElementById('number')
     const loadText = 'Загрузка...'
     const errorText = 'Ошибка...'
     const successText = 'Спасибо! Наш менеджер с вами свяжется!'
@@ -73,9 +75,19 @@ const sendForm = ({ formId, someElem = [] }) => {
 
         form.addEventListener('submit', (event) => {
             event.preventDefault()
-    
+            
+            if(!text.value) {
+                alert('Ваше имя не заполнено');
+                return;
+              }
+              
+              if(!number.value) {
+                alert('Ваш телефон не заполнен');
+                return;
+              }
+
             submitForm()
-        })
+        }, true)
     } catch(error) {
         console.log(error.message)
     }

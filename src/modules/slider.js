@@ -1,8 +1,11 @@
 const slider = () => {
+
     const sliderBlocks = document.querySelectorAll('.slider')
     // функция получения слайдов
     const getToSlide = (sliderBlock) => {
+        
         const sliderAll = document.querySelectorAll(`.${sliderBlock.id}__item`);
+        
             let slides = []
             let slide1 = []
             let slide2 = []
