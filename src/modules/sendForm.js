@@ -1,8 +1,8 @@
 const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId)
-    const statusBlock = document.createElement('div')
+    const tel = document.getElementById('number')
     const text = document.getElementById('text')
-    const number = document.getElementById('number')
+    const statusBlock = document.createElement('div')
     const loadText = 'Загрузка...'
     const errorText = 'Ошибка...'
     const successText = 'Спасибо! Наш менеджер с вами свяжется!'
@@ -88,9 +88,26 @@ const sendForm = ({ formId, someElem = [] }) => {
 
             submitForm()
         }, true)
+
+        tel.addEventListener('focus', _ => {
+            if(!/^\+\d*$/.test(tel.value))
+              tel.value = '+';
+          });
+          
+          tel.addEventListener('keypress', e => {
+            if(!/\d/.test(e.key))
+              e.preventDefault();
+          });
+
+          text.addEventListener('input',() => {
+            text.value = text.value.replace(/[a-z0-9]/gi,'');
+        });
+
     } catch(error) {
         console.log(error.message)
     }
+
+
 }
 
 export default sendForm

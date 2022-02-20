@@ -8,7 +8,7 @@ import sendForm from './modules/sendForm'
 
 modal()
 modalService()
-timer('20 february 2022')
+timer('24 february 2022')
 scroll()
 slider()
 calc()
